@@ -1,9 +1,26 @@
+using Microsoft.EntityFrameworkCore;
+using Net6_ApiModelo.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+ConfigurationManager configuration = builder.Configuration;
 
+
+
+// Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// For Entity Framework
+builder.Services.AddDbContext<ApplicationDbContext>(options => 
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))); //Precisa pacote Entity Framework SqlSever 
+
+
+//podem ser registrados aqui tambem
+// For Identity
+// Adding Authentication
+// Adding Jwt Bearer
+// configure DI for application services
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
