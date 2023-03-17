@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "532pgdJJ0hiBF2Y/L6ceDrv/5A2fXzzaDWQvRqOfK9GWBPLBeSn8Y1hGwbUKMldjOCBc7brlAUiXB2DDpXVJKQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\FagnerGonçalves\\Desktop\\RepoShared\\Net6-ApiModelo\\src\\Net6-ApiModelo\\Net6-ApiModelo\\Net6-ApiModelo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\FagnerGonçalves\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\FagnerGonçalves\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\FagnerGonçalves\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\FagnerGonçalves\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\FagnerGonçalves\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\FagnerGonçalves\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
