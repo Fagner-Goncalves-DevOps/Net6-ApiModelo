@@ -10,7 +10,7 @@ ConfigurationManager configuration = builder.Configuration;
 // Add services to the container.
 builder.Services.AddControllers();
 
-// For Entity Framework
+// For Entity Framework   --Registrar o contexto do banco de dados--
 builder.Services.AddDbContext<ApplicationDbContext>(options => 
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))); //Precisa pacote Entity Framework SqlSever 
 

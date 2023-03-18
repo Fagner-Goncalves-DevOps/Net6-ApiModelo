@@ -8,14 +8,12 @@ namespace Net6_ApiModelo.Controllers
     [Route("[controller]")]
     public class PersonagemController : ControllerBase
     {
-        //controller simples com Instancia do DBcontext direto sem DI
 
         private  readonly ApplicationDbContext _context;
 
-        //construtor recebendo Instancia direto
-        public PersonagemController()
+        public PersonagemController(ApplicationDbContext applicationDbContext)
         {
-            _context = new ApplicationDbContext();
+            _context = applicationDbContext;
         }
 
 
