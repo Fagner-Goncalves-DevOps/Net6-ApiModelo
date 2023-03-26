@@ -14,7 +14,6 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<ApplicationDbContext>(options => 
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))); //Precisa pacote Entity Framework SqlSever 
 
-
 //podem ser registrados aqui tambem
 // For Identity
 // Adding Authentication
