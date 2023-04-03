@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Net6_ApiModelo.Data;
 using Net6_ApiModelo.Model.Entities;
 using Net6_ApiModelo.Model.Interfaces.Generics;
+using Net6_ApiModelo.Model.UnitOfWork;
 
 namespace Net6_ApiModelo.Controllers
 {
@@ -12,11 +13,13 @@ namespace Net6_ApiModelo.Controllers
 
         //private  readonly ApplicationDbContext _context;
         private readonly IRepository<Personagem> _repository;
+        private readonly IUnitOfWork _UoW;
 
-        public PersonagemController(IRepository<Personagem> repository)//ApplicationDbContext applicationDbContext)
+        public PersonagemController(IRepository<Personagem> repository, IUnitOfWork uow)//ApplicationDbContext applicationDbContext)
         {
             //_context = applicationDbContext;
             _repository = repository;
+            _UoW = uow;
         }
 
         [HttpGet("Todos-Personagem")]
@@ -39,37 +42,10 @@ namespace Net6_ApiModelo.Controllers
         {
             if (personagem == null) return BadRequest(); // NotFound() pode ser tambem mais usando para get "busca"
             await _repository.AddTask(personagem);
+            await _UoW.Commit(); //se no repositorio não tiver o save então chma o uow para fazer o commit no banco
 
             return Ok(personagem);    
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-        ////VER FUTURAMENTE ADD USANDO INTERFACE ERRO QUE APRESENTA.
-        //[HttpPost("Adicionar-Personagem")]
-        //public  Task<ActionResult<Personagem>> AddPerson(Personagem personagem) 
-        //{
-        //    foreach (var item in personagem)
-        //    {
-        //        Personagem _personagem = new Personagem();
-        //        _personagem = item.id,
-        //             _personagem = item.name,
-        //        _repository.Add(_personagem);
-        //    }
-
-        //   // var PersonAdd = _repository.Add(personagem);
-
-        //   // return Ok();
-        //}
     }
 }

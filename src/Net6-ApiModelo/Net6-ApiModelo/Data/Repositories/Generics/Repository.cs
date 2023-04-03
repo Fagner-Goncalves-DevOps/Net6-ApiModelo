@@ -29,20 +29,20 @@ namespace Net6_ApiModelo.Data.Repositories.Generics
 
         public virtual async void Add(TEntity entity)
         {
-            DbSet.Add(entity);
-            await SaveChanges();
+            await DbSet.AddAsync(entity);
+            await SaveChanges(); //se estiver usando uow então pode remover o save do repositorio 
         }
 
         public virtual async Task AddTask(TEntity entity)
         {
-            DbSet.Add(entity);
-            await SaveChanges();    
+            await DbSet.AddAsync(entity);
+            //await SaveChanges();  //se estiver usando uow então pode remover o save do repositorio 
         }
 
         public virtual async Task Update(TEntity entity)
         {
             DbSet.Update(entity);
-            await SaveChanges();
+            await SaveChanges(); 
         }
 
         public virtual async Task Remover(int id)
