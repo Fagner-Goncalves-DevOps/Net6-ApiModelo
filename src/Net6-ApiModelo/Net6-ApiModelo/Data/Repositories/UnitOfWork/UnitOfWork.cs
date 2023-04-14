@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
-using Net6_ApiModelo.Model.UnitOfWork;
+using Net6_ApiModelo.Model.Interfaces.UnitOfWork;
 
 namespace Net6_ApiModelo.Data.Repositories.UnitOfWork
 {

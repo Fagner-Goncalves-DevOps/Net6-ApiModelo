@@ -13,7 +13,7 @@ namespace Net6_ApiModelo.Model.Interfaces.Generics
 
         Task Remover(int id);      
         Task RemoverByTEntity(TEntity entity);
-        Task<int> SaveChanges();   
+        Task<int> SaveChanges();  //Uow faz isso já poderia remover
 
     }
 }
