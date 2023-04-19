@@ -10,8 +10,15 @@
         //FK Tabela personagem
         public int IdPersoagem { get; set; }
 
+
         //relations serve somente para gerar relação no Mapping para "principal", nao entra no processo databela. 
-        public Personagem? Personagem { get; set; } 
+        public ArmasPorClasses? ArmasPorClasses { get; set; }
+        public Personagem? Personagem { get; set; }
+
+
+
+        // um personagem tem uma lista de Habilidades, mais de um, configurado direto map Habilidade
+        public IEnumerable<Habilidade> Habilidade { get; set; } = new List<Habilidade>();
 
     }
 }

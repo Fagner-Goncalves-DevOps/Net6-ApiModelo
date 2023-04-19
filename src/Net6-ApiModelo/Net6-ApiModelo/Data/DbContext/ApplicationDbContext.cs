@@ -9,6 +9,10 @@ namespace Net6_ApiModelo.Data
         { }
 
         public DbSet<Personagem> Personagem { get; set; }
+        public DbSet<Classes> Classes { get; set; }
+        public DbSet<Habilidade> Habilidade { get; set; }
+        public DbSet<ArmasPorClasses> ArmasPorClasses { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

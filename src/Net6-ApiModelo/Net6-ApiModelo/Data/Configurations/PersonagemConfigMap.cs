@@ -11,20 +11,21 @@ namespace Net6_ApiModelo.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Personagem> builder)
         {
+
             //colunas normais
             builder.HasKey(Key => Key.Id);
             builder.Property(n => n.Name).IsRequired().HasColumnType("varchar(100)");
 
-            //colunas com relação de 1:N
-            builder.HasMany(c => c.Classes)     //muitas classes para...
+            //colunas com relação de 1:1  e Configs e configs FK
+            builder.HasOne(c => c.Classes)     //uma classe para...
                    .WithOne(p => p.Personagem) //um personagem
-                   .HasForeignKey(p => p.IdPersoagem);
+                   .HasForeignKey<Classes>(p => p.IdPersoagem);
 
             //nome da tabela
             builder.ToTable("Personagem");
 
-            //To Do -> Autorreferência de um para muitos futuramente
-            
+
+
         }
     }
 }
