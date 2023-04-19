@@ -21,6 +21,30 @@ namespace Net6_ApiModelo.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Net6_ApiModelo.Model.Entities.Classes", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<int>("IdPersoagem")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("varchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdPersoagem");
+
+                    b.ToTable("Classes");
+                });
+
             modelBuilder.Entity("Net6_ApiModelo.Model.Entities.Personagem", b =>
                 {
                     b.Property<int>("Id")
@@ -36,6 +60,21 @@ namespace Net6_ApiModelo.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Personagem", (string)null);
+                });
+
+            modelBuilder.Entity("Net6_ApiModelo.Model.Entities.Classes", b =>
+                {
+                    b.HasOne("Net6_ApiModelo.Model.Entities.Personagem", "Personagem")
+                        .WithMany("Classes")
+                        .HasForeignKey("IdPersoagem")
+                        .IsRequired();
+
+                    b.Navigation("Personagem");
+                });
+
+            modelBuilder.Entity("Net6_ApiModelo.Model.Entities.Personagem", b =>
+                {
+                    b.Navigation("Classes");
                 });
 #pragma warning restore 612, 618
         }
